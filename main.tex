@@ -1,0 +1,225 @@
+%% 
+%% Copyright 2007-2020 Elsevier Ltd
+%% 
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%% 
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%% 
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%% 
+%% Template article for Elsevier's document class `elsarticle'
+%% with harvard style bibliographic references
+
+%\documentclass[preprint,12pt,authoryear]{elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times,authoryear]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn,authoryear]{elsarticle}
+%% \documentclass[final,3p,times,authoryear]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn,authoryear]{elsarticle}
+%% \documentclass[final,5p,times,authoryear]{elsarticle}
+ \documentclass[final,5p,times,twocolumn,authoryear, draft]{elsarticle}
+
+%% For including figures, graphicx.sty has been loaded in
+%% elsarticle.cls. If you prefer to use the old commands
+%% please give \usepackage{epsfig}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+\usepackage{lipsum}
+\usepackage{gensymb}
+
+\usepackage{bm}
+
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers.
+%% \usepackage{lineno}
+
+%% You might want to define your own abbreviated commands for common used terms, e.g.:
+\newcommand{\kms}{km\,s$^{-1}$}
+\newcommand{\msun}{$M_\odot}
+
+\journal{High Energy Astrophysics}
+
+
+\begin{document}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for theassociated footnote;
+%% use the fnref command within \author or \affiliation for footnotes;
+%% use the fntext command for theassociated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for theassociated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \affiliation{organization={},
+%%            addressline={}, 
+%%            city={},
+%%            postcode={}, 
+%%            state={},
+%%            country={}}
+%% \fntext[label3]{}
+
+\title{Title of paper}
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{}
+%% \affiliation[label1]{organization={},
+%%             addressline={},
+%%             city={},
+%%             postcode={},
+%%             state={},
+%%             country={}}
+%%
+%% \affiliation[label2]{organization={},
+%%             addressline={},
+%%             city={},
+%%             postcode={},
+%%             state={},
+%%             country={}}
+
+\author[first]{Author name}
+\affiliation[first]{organization={University of the Moon},%Department and Organization
+            addressline={}, 
+            city={Earth},
+            postcode={}, 
+            state={},
+            country={}}
+
+\begin{abstract}
+%% Text of abstract
+Example abstract for the High Energy Astrophysics Journal. Here you provide a brief summary of the research and the results.
+\end{abstract}
+
+%%Graphical abstract
+%\begin{graphicalabstract}
+%\includegraphics{grabs}
+%\end{graphicalabstract}
+
+%%Research highlights
+%\begin{highlights}
+%\item Research highlight 1
+%\item Research highlight 2
+%\end{highlights}
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword, up to a maximum of 6 keywords
+keyword 1 \sep keyword 2 \sep keyword 3 \sep keyword 4
+
+%% PACS codes here, in the form: \PACS code \sep code
+
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+
+\end{keyword}
+
+
+\end{frontmatter}
+
+%\tableofcontents
+
+%% \linenumbers
+
+%% main text
+
+\section{Introduction}
+...
+
+\section{Theory}
+...
+
+\section{Simulation Setup}
+Simulations were performed using the VPIC (Vector Particle-In-Cell) code from LANL (Los Alamos National Laboratory). The Simulations were in 3D geometry ($N_x \times N_y \times N_z$) but we set $y$ domain size to unity, e.g. $N_y = 1$. A shock wave is excited by the so-called \textit{injection method}. A plasma consisting of electrons and ions is injected from the right-hand side boundary with an initial velocity $\bm{v}_0$ and travels toward to the negative $x$-direction.
+At the left-hand side boundary, particles are reflected by the conducting wall. Then, a shock forms due to the interactions between the incoming and the reflected particles, and it propagates in the x-direction with a shock speed $v_{sh}$. Therefore, the simulations are done in the downstream rest frame. The periodic
+boundary conditions are imposed in the y and z-direction.
+
+
+Parameter units are normalized to natural PIC units: charges are in electron charge unit $e=1$, masses are in electron mass unit $m_e=1$, velocities are in speed of light unit $c=1$, time is normalized by electron plasma frequency $\omega_{pe}^{-1} = 1$, length is normalized by electron inertial length $d_e = c \omega_{pe}^{-1}$ and permittivity of space $\epsilon_0 = 1$. 
+
+The domain spans from $0$ to $L_x$ in $x$, $0$ to $L_y$ in $y$ and $0$ to $L_z$ in $z$. The resolution is $L_x / N_x = L_y / N_y = L_z / N_z = 0.1$. The mesh size (topology) is chosen such that the kinetic scale is well resolved. The number of particles per cell (nppc) is $100$. The ion-electron mass ratio $m_i / m_e = 100$. The ratio of the plasma frequency to the electron cyclotron
+frequency is $\omega_{pe} / \Omega_{ce} = 5$. In the upstream frame, electron and ion have a temperature $T_0 = 0.01$ (in units of $m_e c^2$) and number density $n_0=1$. We use $B_0= m_e c \Omega_{ce} / e$ for the upstream magnetic field
+
+
+
+We consider three simulation cases that vary the shock normal angle $\theta$ (relative to the ambient magnetic field) and the injection velocity $\bm{v}_0$ as follows: (i) $\bm{v}_0 = 0.08c$ with $\theta = 75^\circ$, (ii) $\bm{v}_0 = 0.16c$ with $\theta = 75^\circ$, and (iii) $\bm{v}_0 = 0.16c$ with $\theta = 90^\circ$.
+
+
+
+\begin{table}[h!]
+	\centering
+	\caption{Simulation parameters.}
+	\setlength{\tabcolsep}{3pt} % Tightens the gaps between columns
+	\begin{tabular}{p{0.52\columnwidth} ll}
+		\hline
+		Description & Parameter & Value \\ \hline
+		Domain x size    & $N_x$                       & $8192$          \\
+		Domain y size    & $N_y$                       & $1$             \\
+		Domain z size    & $N_z$                       & $1024$          \\
+		Simulation x size & $L_x$                     & $819.2 d_e$     \\
+		Simulation y size & $L_y$                     & $0.1 d_e$       \\
+		Simulation z size & $L_z$                     & $102.4 d_e$     \\
+		Simulation time     & $\tau$                      & $100 \Omega_{ci}^{-1}$ \\
+		Number of Particles per cell        & nppc               & $100$           \\
+		Ion-to-electron mass ratio & $m_i / m_e$                & $100$           \\
+		Plasma-to-cyclotron ratio & $\omega_{pe} / \Omega_{ce}$ & $5$    \\
+		Initial plasma temperature & $T_i, T_e$                 & $0.01 m_e c^2$  \\
+		Initial number density    & $n_{0,i}, n_{0,e}$          & $1$             \\
+		Upstream magnetic field   & $B_0$                       & $0.2$           \\ 
+		Ion inertial length   & $d_i$                       & $0.1 d_e$           \\
+		\hline
+	\end{tabular}
+\end{table}
+
+TODO:
+\begin{enumerate}
+	\item - beta parameters
+	\item - Alven speed
+	\item - Alven Mach number
+\end{enumerate}
+
+\section{Result}
+...
+
+\section{Discussion}
+...
+
+%\section*{Acknowledgements}
+%Thanks to ...
+%
+%%% The Appendices part is started with the command \appendix;
+%%% appendix sections are then done as normal sections
+
+\appendix
+
+\section{Filtering functions.}
+...
+
+\end{document}
+
+\endinput
